@@ -11,7 +11,8 @@ public interface IUnitOfWork
 
     void Add(Prueba model);
     void SaveChanges();
-}
+
+    }
 
 public class UnitOfWork : IUnitOfWork
 {
@@ -19,48 +20,44 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork()
     {
         this.context = new ContextoHospital();
+        this.repositorio = new GenericRepository<Prueba>(this.context);
     }
     private readonly ContextoHospital context;
  
-    private GenericRepository<Prueba> pruebaRepository;
-    public GenericRepository<Prueba> PruebaRepository
+    private GenericRepository<Prueba> repositorio;
+    public IGenericRepository<Prueba> GenericRepository
     {
         get
         {
-            if (this.pruebaRepository == null)
+            if (this.repositorio == null)
             {
-                this.pruebaRepository = new GenericRepository<Prueba>(this.context);
+                this.repositorio = new GenericRepository<Prueba>(this.context);
             }
-            return this.pruebaRepository;
+            return this.repositorio;
         }
     }
-
-    public IGenericRepository<Prueba> UserRepository => throw new System.NotImplementedException();
-
-    public IGenericRepository<Prueba> GenericRepository => throw new System.NotImplementedException();
-
-    /*
-       private GenericRepository<Sale> salesRepository;
-       public GenericRepository<Sale> SalesRepository
-       {
-           get
+        /*
+           private GenericRepository<Sale> salesRepository;
+           public GenericRepository<Sale> SalesRepository
            {
-               if (this.salesRepository == null)
+               get
                {
-                   this.salesRepository = new GenericRepository<Sale>(this.context);
+                   if (this.salesRepository == null)
+                   {
+                       this.salesRepository = new GenericRepository<Sale>(this.context);
+                   }
+                   return this.salesRepository;
                }
-               return this.salesRepository;
-           }
-       }*/
+           }*/
 
-    public async Task SaveChangesAsync()
+       /* public async Task SaveChangesAsync()
     {
         await this.context.SaveChangesAsync();
-    }
+    }*/
 
     public void Add(Prueba model)
     {
-        this.context.Add(model);
+        this.repositorio.Add(model);
     }
 
     public void SaveChanges()

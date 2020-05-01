@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using EFGetStarted.Entidades;
+using EFGetStarted.Repositorios;
 
 namespace EFGetStarted
 {
@@ -9,8 +10,17 @@ namespace EFGetStarted
         static void Main()
         {
 
-            var prueba = new Prueba();
+            using (var db = new ContextoHospital())
+            {
+                IUnitOfWork uow = new UnitOfWork();
 
+                IPruebaService pruebaService = new PruebaService(uow);
+
+                var prueba = new Prueba();
+
+                pruebaService.Create(prueba);
+
+            }
 
             /*var paciente1 = new Paciente { dni = 41000001 ,
                                            nombre = "Martin",
@@ -108,9 +118,8 @@ namespace EFGetStarted
                     Console.WriteLine("Asignando caso {0} a medico2",casoa.CasoId);
                     casoa.medicomatricula = 10002;
                     db.SaveChanges();
-                }*/
-                
-            }
+                }
+            }*/    
         }
     }
 }

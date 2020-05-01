@@ -1150,11 +1150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/martinejaw/Documentos/CLIENTE-SERVIDOR/BBDD/EF/EFGetStarted.csproj",
+      "projectUniqueName": "/home/martinejaw/Documentos/cliente-servidor/Act3/EFGetStarted.csproj",
       "projectName": "EFGetStarted",
-      "projectPath": "/home/martinejaw/Documentos/CLIENTE-SERVIDOR/BBDD/EF/EFGetStarted.csproj",
+      "projectPath": "/home/martinejaw/Documentos/cliente-servidor/Act3/EFGetStarted.csproj",
       "packagesPath": "/home/martinejaw/.nuget/packages/",
-      "outputPath": "/home/martinejaw/Documentos/CLIENTE-SERVIDOR/BBDD/EF/obj/",
+      "outputPath": "/home/martinejaw/Documentos/cliente-servidor/Act3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/martinejaw/.nuget/NuGet/NuGet.Config"

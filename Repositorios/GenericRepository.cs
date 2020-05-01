@@ -14,18 +14,14 @@ namespace EFGetStarted.Repositorios
         void Update(T obj);
         void Delete(object id);
         void Save();
-        void Add(Prueba model);
+        void Add(T model);
     }
 
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private ContextoHospital _context = null;
         private DbSet<T> table = null;
-        public GenericRepository()
-        {
-            this._context = new ContextoHospital();
-            table = _context.Set<T>();
-        }
+
         public GenericRepository(ContextoHospital _context)
         {
             this._context = _context;
@@ -58,9 +54,9 @@ namespace EFGetStarted.Repositorios
             _context.SaveChanges();
         }
 
-        public void Add(Prueba model)
+        public void Add(T model)
         {
-            _context.Add(model);
+            table.Add(model);
         }
     }
 }

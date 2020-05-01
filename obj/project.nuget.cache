@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0mExZh0bLVd21kJxCJU4a3nbZWLsEySaKo+vwbU/aWqWi9woxBgUZ8Frgf93LaUba04zCoVtv3D65CQ9C9cKSw==",
+  "dgSpecHash": "DyDaPGMHsZTApftbQ/xLozuj2M/X9EzbJzhYsM9Ce5IM8BmLFuqfw/JdY6yoYpYkGBkVdEDSvvYZUyukVbitIg==",
   "success": true,
-  "projectFilePath": "/home/martinejaw/Documentos/CLIENTE-SERVIDOR/BBDD/EF/EFGetStarted.csproj",
+  "projectFilePath": "/home/martinejaw/Documentos/cliente-servidor/Act3/EFGetStarted.csproj",
   "expectedPackageFiles": [
     "/home/martinejaw/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/home/martinejaw/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

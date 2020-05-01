@@ -22,7 +22,7 @@ public class PruebaService : IPruebaService
     public void Create(Prueba model)
     {
         // Call to your repository
-        _uow.GenericRepository.Add(model);
+        _uow.Add(model);
 
         // Save changes
         _uow.SaveChanges();
